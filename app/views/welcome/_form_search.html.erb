@@ -1,0 +1,66 @@
+<!-- start hero-header -->
+<div class="hero" style="background-image:url('images/hero-header/index-banner.png');">
+  <div class="container">
+    <h1>Vida Saludable</h1>
+    <p>Busca tu comida saludable de forma rápida y sencilla</p>
+    <div class="main-search-form-wrapper">
+      <%= form_tag root_path, :method => :get do %>
+        <div class="form-holder">
+          <div class="row gap-0">
+            <div class="col-xss-12 col-xs-12 col-sm-12">
+              <%= text_field_tag :tags, nil, class: "form-control", placeholder:"ej. tomate, lechuga, rapido"%>
+            </div>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn"><i class="ion-android-search"></i></button>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>
+
+<!-- end hero-header -->
+<div class="post-hero bg-light">
+  <div class="container">
+    <div class="featured-sm-wrapper mt-15 mb-15">
+      <div class="row">
+        <div class="order-process">
+          <div class="col-md-4 col-sm-4">
+            <div class="service-item-box style-4 clearfix">
+              <a href="#">
+                <i class="fa fa-search"></i>
+              </a>
+              <div class="service-text">
+                <h3>Elíge tus ingredientes</h3>
+              </div>
+            </div>
+          </div>
+          <!-- end service item -->
+          <div class="col-md-4 col-sm-4">
+            <div class="service-item-box style-4 clearfix">
+              <a href="#">
+                <i class="fa fa-car" aria-hidden="true"></i>
+              </a>
+              <div class="service-text">
+                <h3>Selecciona tu receta</h3>
+              </div>
+            </div>
+          </div>
+          <!-- end service item -->
+          <div class="col-md-4 col-sm-4">
+            <div class="service-item-box style-4 clearfix">
+              <a href="#">
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+              </a>
+              <div class="service-text">
+                <h3>¡Hora de cocinar!</h3>
+              </div>
+            </div>
+          </div>
+          <!-- end service item -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="pt-80 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2 class="text-left text-center-sm">Recetas encontradas</h2>
+        </div>
+        <div class="restaurant-common-wrapper">
+          <%- @recipes.each do |recipe| %>
+            <%= render 'recipe_item', recipe: recipe %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vida Saludable</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'admin', media: 'all' %>
+    <%= javascript_include_tag 'admin' %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css' >
+    <link   href='https://fonts.googleapis.com/css?family=Raleway:300,200,100' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div id="cl-wrapper">
+      <div class="cl-sidebar">
+        <div class="cl-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div class="cl-navblock">
+          <div class="menu-space">
+            <div class="content">
+              <%= link_to root_path do %>
+                <div class="sidebar-logo">
+                  <div class="logo">
+                  </div>
+                </div>
+              <% end %>
+              <div class="side-user">
+                <div class="info">
+                  <p>
+                    <i class="fa fa-user"></i>
+                    Medica
+                  </p>
+                </div>
+              </div>
+              <ul class="cl-vnavigation">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-folder"></i>
+                    <span>Recetas</span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="#{'active' if current_page?(admins_recipes_path)}">
+                      <%= link_to "Lista", admins_recipes_path %>
+                    </li>
+                    <li class="#{'active' if current_page?(new_admins_recipe_path)}">
+                      <%= link_to "Nuevo", new_admins_recipe_path %>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pcont" class="container-fluid">
+        <div id="head-nav" class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="dropdown profile_menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span>emails admin</span>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="">Salir</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="cl-mcont">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

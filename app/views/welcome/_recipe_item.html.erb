@@ -1,0 +1,26 @@
+<%= link_to recipe_path(recipe), class: "restaurant-common-wrapper-item clearfix" do %>
+  <div class="GridLex-grid-middle">
+    <div class="GridLex-col-6_xs-12">
+      <div class="restaurant-type">
+        <div class="image">
+          <img src="images/brands/02.jpg" alt="image" />
+        </div>
+        <div class="content">
+          <h4><%= recipe.name %></h4>
+          <p><%= recipe.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="GridLex-col-4_xs-8_xss-12 mt-10-xss">
+      <div class="job-location">
+        <i class="fa fa-map-marker text-primary"></i> Calorias: <%= recipe.total_calories %>
+      </div>
+    </div>
+    <div class="GridLex-col-2_xs-4_xss-12">
+      <div class="res-btn label label-danger">
+        Ver
+      </div>
+      <span class="font12 block spacing1 font400 text-center">Preparación: <%= recipe.preparation_time %> Min.</span>
+    </div>
+  </div>
+<% end %>

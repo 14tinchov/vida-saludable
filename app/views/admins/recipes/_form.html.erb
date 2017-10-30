@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="block-flat">
+      <div class="header">
+        <h3>Datos</h3>
+      </div>
+      <div class="content">
+        <%= form_for [:admins, @recipe] do |f| %>
+          <%- if @recipe.errors.any? %>
+            <div class="error_explanation">
+              <h2><%= "#{pluralize(@recipe.errors.count, "error")}" %></h2>
+
+              <ul>
+                <%- @recipe.errors.full_messages.each do |message| %>
+                  <li>
+                    <%= message %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :name, 'Nombre' %>
+            <br>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :description, 'Descripción' %><br/>
+            <%= f.text_area :description, id: :recipe_description %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :preparation, 'Preparación' %><br/>
+            <%= f.text_area :preparation, id: :recipe_preparation %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :total_calories, 'Total de calorias' %><br/>
+            <%= f.text_field :total_calories, id: :recipe_total_calories %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :tag_list, "Tags (separados por comas)" %><br/>
+            <%= f.text_field :tag_list %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+            <%= link_to 'Atras', admins_recipes_path, class: 'btn btn-default' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

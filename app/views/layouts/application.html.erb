@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VidaSaludable</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body class="<%= build_body_class%>">
+    <div id="introLoader" class="introLoading"></div>
+
+    <div class="container-wrapper">
+      <%= render 'shared/header' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
+  </body>
+
+  <%= javascript_include_tag 'application' %>
+</html>

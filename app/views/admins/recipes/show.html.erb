@@ -1,0 +1,30 @@
+<div class="col-sm-12">
+  <div class="block-flat">
+    <div class="header">
+      <h3>Información general</h3>
+    </div>
+    <div class="content overflow-hidden mb20">
+      <p>
+        <strong>Nombre:</strong>
+        <%= @recipe.name %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @recipe.description %>
+      </p>
+
+      <p>
+        <strong>Preparation:</strong>
+        <%= @recipe.preparation %>
+      </p>
+
+      <p>
+        <strong>Total calories:</strong>
+        <%= @recipe.total_calories %>
+      </p>
+    </div>
+    <br>
+    <%= link_to 'Editar', edit_admins_recipe_path(@recipe), class: 'btn btn-primary' %>
+  </div>
+</div>

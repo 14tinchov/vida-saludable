@@ -1,0 +1,67 @@
+<div class="section sm">
+  <div class="container">
+    <div class="how-it-work-wrapper">
+      <div class="how-it-work-box">
+        <div class="GridLex-gap-40">
+          <div class="GridLex-grid-middle">
+            <div class="GridLex-col-7_sm-7_xs-12">
+              <div class="image">
+                <img src="https://images.pexels.com/photos/196643/pexels-photo-196643.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Image" />
+              </div>
+            </div>
+
+            <div class="GridLex-col-5_sm-5_xs-12">
+            
+              <div class="content">
+            
+                <h3 class="heading"><%= @recipe.name %></h3>
+                
+                <p class="lead text-muted font-italic"><%= @recipe.description %></p>
+                
+                <p>Preparacion: <%= @recipe.preparation %></p>
+                
+                <ul class="list-with-icon alt mt-20 mb-25">
+                  <li><i class="text-primary ion-android-checkmark-circle"></i>Tiempo estimado de preparación: <%= @recipe.preparation_time %> Minutos</li>
+                  <li><i class="text-primary ion-android-checkmark-circle"></i>Total de calorias: <%= @recipe.total_calories %></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section sm">
+  <div class="container">
+    <div class="col-sm-12 col-md-12">
+
+      <h3 class="uppercase">Commentarios</h3>
+
+      <div id="comment-wrapper">
+
+      <ul class="comment-item">
+        <li>
+          <div class="comment-avatar">
+            <img src="images/man/03.jpg" alt="author image" />
+          </div>
+          <div class="comment-header">
+            <h6 class="heading mt-0">Ibrahim ibn al-Walid</h6>
+            <span class="comment-time">23 minutes</span>
+          </div>
+          <div class="comment-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec justo fringilla, laoreet mauris vitae, fringilla elit. Curabitur semper tristique nisi, at ultricies leo ornare rutrum. Proin lacinia vulputate urna, non pharetra ligula finibus nec. Vestibulum id mattis risus. Praesent commodo sem eleifend scelerisque ornare. </p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="clear"></div>
+
+      <div class="text-center">
+        <a href="#" class="btn btn-primary">Ver mas</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
