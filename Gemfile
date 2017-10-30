@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'factory_girl_rails'
 gem 'faker'
+gem 'devise'
 
 group :production do
   gem 'rails_12factor'

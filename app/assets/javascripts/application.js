@@ -1,6 +1,7 @@
 //
 //= require public_template/jquery-1.11.3.min
 //= require public_template/jquery-migrate-1.2.1.min
+//= require jquery_ujs
 //= require public_template/bootstrap.min
 //= require public_template/bootstrap-modalmanager
 //= require public_template/bootstrap-modal

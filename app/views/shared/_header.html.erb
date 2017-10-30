@@ -19,8 +19,13 @@
 
       <div class="nav-mini-wrapper">
         <ul class="nav-mini sign-in">
-          <li><a href="login.html">Entrar</a></li>
-          <li><a href="login.html">Registrarse</a></li>
+          <% if current_user %>
+            <li><a href="#">Mi Perfil</a></li>
+            <li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Entrar', new_user_session_path %></li>
+            <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

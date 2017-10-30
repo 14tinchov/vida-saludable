@@ -1,0 +1,67 @@
+<div class="login-container-wrapper"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="login-box-wrapper">
+              <div class="modal-header">
+                <h4 class="modal-title text-center">Loguearse</h4>
+              </div>
+              
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <div class="modal-body">
+                  <div class="row gap-20">
+
+                    <div class="col-sm-12 col-md-12">
+                      <div class="form-group">
+                        <%= f.label :email %>
+                        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                      <div class="form-group">
+                        <%= f.label :password, 'Contraseña' %><br />
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                      <div class="checkbox-block"> 
+                        <%= f.check_box :remember_me, class: "checkbox" %>
+                        <%= f.label :remember_me, 'Recordarme' %>
+                      </div>
+                    </div>
+                    
+
+                    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                      <div class="col-sm-6 col-md-6">
+                        <div class="login-box-link-action">
+                          <%= link_to "¿Ovidaste tu contraseña?", new_password_path(resource_name) %><br />
+                        </div>
+                      </div>
+                    <% end -%>
+                    
+                    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                      <div class="col-sm-12 col-md-12">
+                        <div class="login-box-box-action">
+                          ¿No tienes cuenta? <%= link_to "Registrate !", new_registration_path(resource_name) %>
+                        </div>
+                      </div>
+                    <% end -%>
+                  </div>
+                </div>
+
+                <div class="modal-footer text-center">
+                  <%= f.submit "Entrar", class: 'btn btn-primary' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
