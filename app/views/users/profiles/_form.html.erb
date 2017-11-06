@@ -1,0 +1,80 @@
+<%= form_with(model: [:users, @profile], local: true, html: { class: 'post-form-wrapper'}) do |form| %>
+  <div class="row gap-20">
+
+<!--     <div class="col-sm-6 col-md-4">
+      <div class="form-group bootstrap-fileinput-style-01">
+        <label>Foto de perfil</label>
+        <input type="file" name="form-register-photo" id="form-register-photo">
+        <span class="font12 font-italic">** photo must not bigger than 250kb</span>
+      </div>
+    </div> -->
+
+    <div class="clear"></div>
+    <div class="col-sm-6 col-md-6">
+      <div class="form-group">
+        <%= form.label :first_name, 'Nombre' %>
+        <%= form.text_field :first_name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <div class="form-group">
+        <%= form.label :last_name, 'Apellido' %>
+        <%= form.text_field :last_name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="col-sm-6 col-md-6">
+      <div class="form-group">
+        <%= form.label :height, 'Altura' %>
+        <%= form.text_field :height, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <div class="form-group">
+        <%= form.label :weight, 'Peso' %>
+        <%= form.text_field :weight, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="col-sm-12 col-md-12">
+      <div class="form-group">
+        <%= form.label :physical_activity, '¿Hace mucho actividad física?' %>
+        <%= form.select :physical_activity, options_for_select(build_physical_activity_options, form.object.physical_activity), class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="col-sm-12 col-md-12">
+      <div class="form-group">
+        <%= form.label :physical_activity_description, '¿Que tipo de actividad física hace?' %>
+        <%= form.text_area :physical_activity_description, class: "form-control bootstrap3-wysihtml5" %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="col-sm-12 col-md-12">
+      <div class="form-group">
+        <%= form.label :other_diseases, 'Otras enfermedades' %>
+        <%= form.text_area :other_diseases, class: "form-control bootstrap3-wysihtml5" %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="col-sm-12 col-md-12">
+      <div class="form-group">
+        <%= form.label :other_pleasures, 'Otros gustos' %>
+        <%= form.text_area :other_pleasures, class: "form-control bootstrap3-wysihtml5" %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="col-sm-12 mt-10">
+      <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

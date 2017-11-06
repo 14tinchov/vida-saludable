@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :admins
-  devise_for :users
   namespace :admins do
     resources :recipes
+  end
+
+  devise_for :users
+  namespace :users do
+    resource :profile, only: [:show, :edit, :update]
   end
 
   resources :recipes

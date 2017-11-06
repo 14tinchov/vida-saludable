@@ -1,0 +1,39 @@
+<div class="GridLex-col-3_sm-4_xs-12">
+  <div class="admin-sidebar">
+
+    <div class="admin-user-item">
+      <div class="image">
+        <img src="/images/man/01.jpg" alt="image" class="img-circle" />
+      </div>
+
+      <% if current_user.first_name %>
+        <h4><%= current_user.first_name %></h4>
+      <% end -%>
+
+      <p class="user-role">Free</p>
+    </div>
+
+    <div class="admin-user-action text-center">
+      <%= link_to 'Editar', edit_users_profile_path, class: 'btn btn-primary btn-sm' %>
+    </div>
+
+    <ul class="admin-user-menu clearfix">
+      <!-- <li>
+        <a href="#"><i class="fa fa-tachometer"></i> Dashboard</a>
+      </li> -->
+      <li class="active">
+        <%= link_to users_profile_path do %>
+          <i class="fa fa-user"></i> Mi perfil
+        <% end %>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-bookmark"></i>Recetas favoritas</a>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>Salir
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

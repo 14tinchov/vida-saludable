@@ -14,4 +14,14 @@ module ApplicationHelper
       'not-transparent-header'
     end
   end
+
+  def build_physical_activity_options
+    label_physical_activities = ['Mucho', 'Normal', 'Poco']
+
+    physical_activities = Profile.physical_activities.keys
+    physical_activities.each_with_index.inject([]){ |rtn, pair|
+      element, index = pair
+      rtn << [label_physical_activities[index], element]
+    }
+  end
 end
