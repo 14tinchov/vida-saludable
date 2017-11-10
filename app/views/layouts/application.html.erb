@@ -9,7 +9,9 @@
   </head>
 
   <body class="<%= build_body_class%>">
-    <div id="introLoader" class="introLoading"></div>
+    <% if current_page?(root_path) %>
+      <div id="introLoader" class="introLoading"></div>
+    <% end %>
 
     <div class="container-wrapper">
       <%= render 'shared/header' %>

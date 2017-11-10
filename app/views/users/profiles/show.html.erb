@@ -1,28 +1,12 @@
-<div class="admin-container-wrapper">
-  <div class="container">
-    <div class="GridLex-gap-15-wrappper">
-      <div class="GridLex-grid-noGutter-equalHeight">
-
-        <%= render 'sidebar' %>
-
-        <div class="GridLex-col-9_sm-8_xs-12">
-          <div class="admin-content-wrapper">
-
-            <div class="admin-section-title">
-              <h2>Perfil</h2>
-              <p>¡ Tu información personal y recetas favoritas !.</p>
-            </div>
-
-            <p><strong>Nombre completo:</strong> <%= current_user.name%></p>
-            <p><strong>Peso:</strong> <%= current_user.weight %></p>
-            <p><strong>Altura:</strong> <%= current_user.height %></p>
-            <p><strong>¿Actividad física?:</strong> <%= current_user.format_to_physical_activity %></p>
-            <p><strong>Otras actividades físicas:</strong> <%= current_user.physical_activity_description %></p>
-            <p><strong>Otras enfermedades:</strong> <%= current_user.other_diseases %></p>
-            <p><strong>Otros gustos:</strong> <%= current_user.other_pleasures %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="admin-section-title">
+  <h2>Perfil</h2>
+  <p>¡ Tu información personal y recetas favoritas !.</p>
 </div>
+
+<p><strong>Nombre completo:</strong> <%= current_user.name%></p>
+<p><strong>Peso:</strong> <%= current_user.weight %></p>
+<p><strong>Altura:</strong> <%= current_user.height %></p>
+<p><strong>¿Actividad física?:</strong> <%= current_user.format_to_physical_activity %></p>
+<p><strong>Otras actividades físicas:</strong> <%= current_user.physical_activity_description %></p>
+<p><strong>Otras enfermedades:</strong> <%= current_user.other_diseases %></p>
+<p><strong>Otros gustos:</strong> <%= current_user.other_pleasures %></p>

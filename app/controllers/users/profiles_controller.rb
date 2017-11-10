@@ -1,4 +1,4 @@
-class Users::ProfilesController < ApplicationController
+class Users::ProfilesController < Users::BaseController
   before_action :set_profile
   before_action :check_profile, only: [:show, :edit]
 

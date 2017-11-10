@@ -1,4 +1,4 @@
-class Users::RecipeUsersController < ApplicationController
+class Users::RecipeUsersController < Users::BaseController
   def create
     @favourite_recipe = current_user.recipe_users.new(recipes_users_params)
     if @favourite_recipe.save

@@ -19,14 +19,14 @@
 
     <ul class="admin-user-menu clearfix">
       <li>
-        <a href="#"><i class="fa fa-tachometer"></i> Recomendaciones</a>
+        <a href="#"><i class="fa fa-tachometer"></i> Tus Recomendaciones</a>
       </li>
-      <li class="active">
+      <li class="<%= 'active' if current_page?(users_profile_path)%>">
         <%= link_to users_profile_path do %>
           <i class="fa fa-user"></i> Mi perfil
         <% end %>
       </li>
-      <li>
+      <li class="<%= 'active' if current_page?(users_recipes_path)%>">
         <%= link_to users_recipes_path do %>
           <i class="fa fa-bookmark"></i> Recetas favoritas
         <% end %>
