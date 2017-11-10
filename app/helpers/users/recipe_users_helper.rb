@@ -1,0 +1,2 @@
+module Users::RecipeUsersHelper
+end

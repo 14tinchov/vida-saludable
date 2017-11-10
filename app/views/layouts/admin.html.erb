@@ -49,6 +49,17 @@
                     </li>
                   </ul>
                 </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-folder"></i>
+                    <span>Usuarios</span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li class="#{'active' if current_page?(admins_users_path)}">
+                      <%= link_to "Lista", admins_users_path %>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>

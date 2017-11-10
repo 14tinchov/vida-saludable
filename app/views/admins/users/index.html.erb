@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <p id="notice">
+      <%= notice%>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <h1>Usuarios</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="block-flat">
+      <div class="header">
+        <h3>Lista</h3>
+      </div>
+      <div class="content">
+        <%- if @users.any? %>
+          <table class="no-border">
+            <thead class="no-border">
+              <tr>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th colspan="1"></th>
+              </tr>
+            </thead>
+            <tbody class="no-border-x no-border-y">
+              <%- @users.each do |user| %>
+                <tr>
+                  <td>
+                    <%= user.email %>
+                  </td>
+                  <td>
+                    <%= user.name %>
+                  </td>
+                  <td>
+                    <%= link_to 'Ver', admins_user_path(user) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <div class="alert alert-info">
+            <i class="fa fa-info-circle sign"></i>
+            No hay postulaciones
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

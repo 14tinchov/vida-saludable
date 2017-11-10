@@ -1,0 +1,50 @@
+<div class="col-sm-12">
+  <div class="block-flat">
+    <div class="header">
+      <h3>Información general</h3>
+    </div>
+    <div class="content overflow-hidden mb20">
+      <p>
+        <strong>Nombre:</strong>
+        <%= @user.name %>
+      </p>
+      
+      <p>
+        <strong>Peso:</strong>
+        <%= @user.weight %>
+      </p>
+
+      <p>
+        <strong>Altura:</strong>
+        <%= @user.height %>
+      </p>
+
+      <p>
+        <strong>Actividad Física:</strong>
+        <%= @user.format_to_physical_activity %>
+      </p>
+
+      <p>
+        <strong>Actividades que realiza:</strong>
+        <%= @user.physical_activity_description %>
+      </p>
+
+      <p>
+        <strong>Enfermedades:</strong>
+        <%= @user.other_diseases %>
+      </p>
+
+      <p>
+        <strong>Gustos:</strong>
+        <%= @user.other_pleasures %>
+      </p>
+    </div>
+
+    <div class="header">
+      <h3>Recetas favotitas</h3>
+      <a href="" class="list-group-item mt20">
+        <p>Nombre: Lorem</p>
+      </a>
+    </div>
+  </div>
+</div>

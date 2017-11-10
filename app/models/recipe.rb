@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :recipe_users
+  has_many :users, through: :recipe_users
 
   def self.tagged_with(name)
     Tag.find_by!(name: name).recipes

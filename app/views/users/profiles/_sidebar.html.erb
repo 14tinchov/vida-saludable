@@ -18,20 +18,22 @@
     </div>
 
     <ul class="admin-user-menu clearfix">
-      <!-- <li>
-        <a href="#"><i class="fa fa-tachometer"></i> Dashboard</a>
-      </li> -->
+      <li>
+        <a href="#"><i class="fa fa-tachometer"></i> Recomendaciones</a>
+      </li>
       <li class="active">
         <%= link_to users_profile_path do %>
           <i class="fa fa-user"></i> Mi perfil
         <% end %>
       </li>
       <li>
-        <a href="#"><i class="fa fa-bookmark"></i>Recetas favoritas</a>
+        <%= link_to users_recipes_path do %>
+          <i class="fa fa-bookmark"></i> Recetas favoritas
+        <% end %>
       </li>
       <li>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out"></i>Salir
+          <i class="fa fa-sign-out"></i> Salir
         <% end %>
       </li>
     </ul>

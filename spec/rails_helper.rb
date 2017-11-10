@@ -17,6 +17,8 @@ RSpec.configure do |config|
   config.include Rails.application.routes.url_helpers
   config.include FactoryGirl::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include Warden::Test::Helpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
