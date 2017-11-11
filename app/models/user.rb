@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def create_profile?
     self.create_profile unless profile
   end
+
+  def has_recipe?(recipe)
+    recipes.include?(recipe)
+  end
 end

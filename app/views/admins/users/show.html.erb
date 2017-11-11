@@ -42,9 +42,12 @@
 
     <div class="header">
       <h3>Recetas favotitas</h3>
-      <a href="" class="list-group-item mt20">
-        <p>Nombre: Lorem</p>
-      </a>
+
+      <% @user.recipes.each do |recipe| %>
+        <%= link_to admins_recipe_path(recipe), class: "list-group-item mt20" do %>
+          <p>Nombre: <%= recipe.name %></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

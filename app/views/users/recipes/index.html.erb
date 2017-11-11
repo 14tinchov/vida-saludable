@@ -4,39 +4,40 @@
 </div>
 
 <% if current_user.recipes.any? %>
-  <div class="restaurant-item-grid-wrapper">
-    <div class="GridLex-gap-30">
-      <div class="GridLex-grid-noGutter-equalHeight">
-        <div class="GridLex-col-4_sm-6_xs-6_xss-12">
-          <div class="restaurant-item-grid">
-            <div class="fav-save">
-              <a href="#"><i class="fa fa-heart text-danger"></i></a>
-            </div>
+  <% current_user.recipes.each do |recipe|%>
+    <div class="restaurant-item-grid-wrapper">
+      <div class="GridLex-gap-30">
+        <div class="GridLex-grid-noGutter-equalHeight">
+          <div class="GridLex-col-4_sm-6_xs-6_xss-12">
+            <div class="restaurant-item-grid">
+              <div class="fav-save">
+                <a href="#"><i class="fa fa-heart text-danger"></i></a>
+              </div>
 
-            <a href="#">
-              <div class="image">
-                <div class="vertical-middle">
-                  <img src="images/brands/06.png" alt="image" />
+              <%= link_to recipe_path(recipe) do %>
+                <div class="image">
+                  <div class="vertical-middle">
+                    <img src="/images/brands/06.png" alt="image" />
+                  </div>
                 </div>
-              </div>
-            
-              <div class="content">
-                <h4 class="heading">Arabian Grill</h4>
-                <p class="location"><i class="fa fa-map-marker text-primary"></i> <strong class="text-primary">Indian</strong> - Paris, France</p>
-                <p class="date text-muted font12 font-italic">Min order: &pound;15</p>
-              </div>
-            </a>
 
-            <div class="content-bottom">
-              <div class="sub-category">
-                <a href="#">Place order</a>
+                <div class="content">
+                  <h4 class="heading"><%= recipe.name %></h4>
+                  <!-- <p class="location"><i class="fa fa-map-marker text-primary"></i> <strong class="text-primary">Indian</strong> - Paris, France</p> -->
+                </div>
+              <% end %>
+
+              <div class="content-bottom">
+                <div class="sub-category">
+                  <%= link_to 'Ver', recipe_path(recipe) %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% else %>
   <p> ¡ Todavía no tienes recetas cargadas !</p>
 <% end %>
