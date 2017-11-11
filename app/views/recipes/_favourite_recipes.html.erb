@@ -1,0 +1,15 @@
+<% if current_user %>
+  <li>
+    <%= link_to users_recipe_users_path(recipe_id: @recipe.id), method: :post, class: 'js-add-favourite' do %>
+      <i class="fa fa-heart-o"></i>
+      Agregar a mis recetas
+    <% end -%>
+  </li>
+
+  <li class='hide'>
+    <%= link_to users_recipe_users_path(recipe_id: @recipe.id), method: :delete, class: 'js-add-favourite' do %>
+      <i class="fa fa-heart text-danger"></i>
+      Quitar de mis recetas
+    <% end -%>
+  </li>
+<% end %>

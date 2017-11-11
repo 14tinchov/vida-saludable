@@ -23,6 +23,8 @@
                 <ul class="list-with-icon alt mt-20 mb-25">
                   <li><i class="text-primary ion-android-checkmark-circle"></i>Tiempo estimado de preparación: <%= @recipe.preparation_time %> Minutos</li>
                   <li><i class="text-primary ion-android-checkmark-circle"></i>Total de calorias: <%= @recipe.total_calories %></li>
+
+                  <%= render 'favourite_recipes' %>
                 </ul>
               </div>
             </div>

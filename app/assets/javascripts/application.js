@@ -25,4 +25,5 @@
 //= require public_template/jquery.introLoader.min
 //= require public_template/jquery.responsivegrid
 //= require public_template/customs
+//= require ./application/add_recipes
 //
