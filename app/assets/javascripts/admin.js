@@ -16,3 +16,4 @@
 //= require private_template/jquery.vectormaps/maps/jquery-jvectormap-world-mill-en
 //= require private_template/behaviour/dashboard
 //= require jquery_ujs
+//= require cocoon

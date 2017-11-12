@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :recipes
     resources :users, only: [:index, :show]
+    resources :recommendations, only: [:create]
   end
 
   devise_for :users

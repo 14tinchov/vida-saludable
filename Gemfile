@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'devise'
+gem 'cocoon'
 
 group :production do
   gem 'rails_12factor'

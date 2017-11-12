@@ -49,5 +49,30 @@
         <% end %>
       <% end %>
     </div>
+
+    <div class="header">
+      <h3>Recomendaciones</h3>
+      <% @user.recommendations.each do |recommendation| %>
+        <a href="#" class="list-group-item mt20">
+          <p><%= recommendation.content %></p>
+        </a>
+      <% end %>
+      <div class="row">
+        <%= form_with url: admins_recommendations_path, local: true do |form| %>
+          <div class="col-sm-12">
+            <h4>Nueva recomendación</h4>
+            <div class="form-group">
+              <%= form.hidden_field :user_id, value: @user.id %>
+              <%= form.label :content, 'Descripción' %>
+              <br>
+              <%= form.text_area :content %>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <%= form.submit 'Agregar Recomendación' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

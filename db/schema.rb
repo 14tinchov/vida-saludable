@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110181259) do
+ActiveRecord::Schema.define(version: 20171111210751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 20171110181259) do
     t.integer "preparation_time"
   end
 
+  create_table "recommendations", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recommendations_on_user_id"
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.bigint "tag_id"
     t.bigint "recipe_id"
@@ -101,6 +109,7 @@ ActiveRecord::Schema.define(version: 20171110181259) do
   add_foreign_key "profiles", "users"
   add_foreign_key "recipe_users", "recipes"
   add_foreign_key "recipe_users", "users"
+  add_foreign_key "recommendations", "users"
   add_foreign_key "taggings", "recipes"
   add_foreign_key "taggings", "tags"
 end
