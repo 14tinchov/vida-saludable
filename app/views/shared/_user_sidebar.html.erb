@@ -18,8 +18,10 @@
     </div>
 
     <ul class="admin-user-menu clearfix">
-      <li>
-        <a href="#"><i class="fa fa-tachometer"></i> Tus Recomendaciones</a>
+      <li class="<%= 'active' if current_page?(users_recommendations_path)%>">
+        <%= link_to users_recommendations_path do %>
+          <i class="fa fa-tachometer"></i> Tus Recomendaciones
+        <% end %>
       </li>
       <li class="<%= 'active' if current_page?(users_profile_path)%>">
         <%= link_to users_profile_path do %>
