@@ -20,4 +20,20 @@ class User < ApplicationRecord
   def has_recipe?(recipe)
     recipes.include?(recipe)
   end
+
+  def update_premium
+    if premium
+      self.update_attributes(premium: false)
+    else
+      self.update_attributes(premium: true)
+    end
+  end
+
+  def format_to_premium
+    if premium
+      "Si"
+    else
+      "No"
+    end
+  end
 end

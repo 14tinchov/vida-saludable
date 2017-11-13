@@ -31,7 +31,7 @@
                 <div class="info">
                   <p>
                     <i class="fa fa-user"></i>
-                    Medica
+                    Nutricionista
                   </p>
                 </div>
               </div>
@@ -74,11 +74,11 @@
               <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="dropdown profile_menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span>emails admin</span>
+                    <span>Nutricionista</span>
                     <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="">Salir</a></li>
+                    <li><%= link_to 'Salir', destroy_admin_session_path, method: :delete %></li>
                   </ul>
                 </li>
               </ul>

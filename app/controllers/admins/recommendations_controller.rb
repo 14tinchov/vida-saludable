@@ -1,5 +1,6 @@
-class Admins::RecommendationsController < ApplicationController
+class Admins::RecommendationsController < Admins::BaseController
   before_action :set_user, only: [:create]
+  before_action :set_recommendation, only: [:destroy]
 
   def create
     recommendation = @user.recommendations.new(recommendations_params)
@@ -15,10 +16,23 @@ class Admins::RecommendationsController < ApplicationController
     end
   end
 
+  def destroy
+    @recommendation.destroy
+    respond_to do |format|
+      format.html { redirect_to admins_user_path(params[:user_id]), notice: 'La recomendación se ha borrado.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
+  def set_recommendation
+    @recommendation = Recommendation.find(params[:id])
+  end
+
   def set_user
     @user = User.find(params[:user_id])
   end
+
   def recommendations_params
     params.permit(:content)
   end

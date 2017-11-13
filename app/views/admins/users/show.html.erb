@@ -38,6 +38,19 @@
         <strong>Gustos:</strong>
         <%= @user.other_pleasures %>
       </p>
+
+      <p>
+        <strong>¿Es premium?:</strong>
+        <%= @user.format_to_premium %>
+      </p>
+
+      <div class="row">
+        <% if @user.premium %>
+          <%= link_to " Sacar premium", admins_user_premium_users_path(@user), class: "btn btn-primary", method: :patch %>
+        <% else %>
+          <%= link_to " Hacer premium", admins_user_premium_users_path(@user), class: "btn btn-primary", method: :patch %>
+        <% end %>
+      </div>
     </div>
 
     <div class="header">
@@ -53,9 +66,10 @@
     <div class="header">
       <h3>Recomendaciones</h3>
       <% @user.recommendations.each do |recommendation| %>
-        <a href="#" class="list-group-item mt20">
+        <div href="#" class="list-group-item mt20">
           <p><%= recommendation.content %></p>
-        </a>
+          <%= link_to 'Eliminar', admins_recommendation_path(id: recommendation.id, user_id: @user.id), method: :delete, data: { confirm: '¿Estas Seguro?' }, class: 'btn btn-default' %>
+        </div>
       <% end %>
       <div class="row">
         <%= form_with url: admins_recommendations_path, local: true do |form| %>
@@ -69,7 +83,7 @@
             </div>
           </div>
           <div class="col-sm-12">
-            <%= form.submit 'Agregar Recomendación' %>
+            <%= form.submit 'Agregar Recomendación', class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>

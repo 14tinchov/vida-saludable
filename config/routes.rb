@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+
   devise_for :admins
   namespace :admins do
     resources :recipes
-    resources :users, only: [:index, :show]
-    resources :recommendations, only: [:create]
+    resources :users, only: [:index, :show] do
+      resource :premium_users, only: [:update]
+    end
+    resources :recommendations, only: [:create, :destroy]
   end
 
   devise_for :users

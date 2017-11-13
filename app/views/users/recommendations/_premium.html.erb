@@ -1,0 +1,8 @@
+<% if current_user.recommendations.any? %>
+  <% current_user.recommendations.each_with_index do |recommendation, index|%>
+    <h4>Tip °N <%= index + 1%></h4>
+    <p><%= recommendation.content%></p>
+  <% end %>
+<% else %>
+  <p> ¡ Todavía no tienes recomendaciones por parte de tu nutricionista !</p>
+<% end %>

@@ -3,12 +3,8 @@
   <p>¡ Todas tus recomendacciones de tu nutricionista !</p>
 </div>
 
-<% if current_user.recommendations.any? %>
-  <% current_user.recommendations.each_with_index do |recommendation, index|%>
-    <h4>Tip °N <%= index + 1%></h4>
-    <p><%= recommendation.content%></p>
-  <% end %>
+<% if current_user.premium %>
+  <%= render 'premium' %>
 <% else %>
-  <p> ¡ Todavía no tienes recomendaciones por parte de tu nutricionista !</p>
+  <p>¡ Todavia no sos premium ! Saca tu turno con la nutrisionista y mejora tu cuenta para tener recomendaciones personalizadas por un experto. </p>
 <% end %>
-
